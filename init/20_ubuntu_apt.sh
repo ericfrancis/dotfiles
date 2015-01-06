@@ -1,3 +1,4 @@
+#!/bin/sh
 # Ubuntu-only stuff. Abort if not Ubuntu.
 is_ubuntu || return 1
 
@@ -52,13 +53,4 @@ if (( ${#packages[@]} > 0 )); then
   for package in "${packages[@]}"; do
     sudo apt-get -qq install "$package"
   done
-fi
-
-# Install Git Extras
-if [[ ! "$(type -P git-extras)" ]]; then
-  e_header "Installing Git Extras"
-  (
-    cd $DOTFILES/vendor/git-extras &&
-    sudo make install
-  )
 fi

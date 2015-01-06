@@ -1,3 +1,4 @@
+#!/bin/sh
 # Editing
 
 if [[ ! "$SSH_TTY" ]] && is_osx; then
