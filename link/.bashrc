@@ -29,22 +29,10 @@ alias ls='ls -F --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -l'
 
-# check if bash functions folder exists
-if [ -d ~/.bash_functions/ ]; then
-	# source all files within bash funtions folder
-	for file in ~/.bash_functions/*; do
-		source $file
-	done
-else
-	echo "bash_functions folder does not exist"
-fi
-
-
 set_mvn_version() {
   [[ $# -ne 1 || -z $1 ]] && echo "missing or invalid arguments" && return 1
   mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$1
 }
-
 
 # TMUX
 if which tmux >/dev/null 2>&1; then
