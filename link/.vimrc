@@ -11,3 +11,13 @@ nnoremap <leader>b :ls<cr>:b<space>
 
 " NERDTree settings
 let NERDTreeChDirMode = 2
+
+" Grep settings
+set grepprg=grep\ -n\ $*
+
+" Line numbers
+:set number
+
+" Mouse support
+:set mouse=a 
+:set ttyfast
