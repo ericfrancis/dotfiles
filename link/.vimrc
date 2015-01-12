@@ -19,5 +19,8 @@ set grepprg=grep\ -n\ $*
 :set number
 
 " Mouse support
-:set mouse=a 
-:set ttyfast
+set mouse=a 
+set ttyfast
+
+" vsplit default right
+set splitright
