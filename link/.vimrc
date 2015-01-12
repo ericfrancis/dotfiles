@@ -11,6 +11,8 @@ nnoremap <leader>b :ls<cr>:b<space>
 
 " NERDTree settings
 let NERDTreeChDirMode = 2
+" find current buffer in tree
+map <leader>r :NERDTreeFind<cr>
 
 " Grep settings
 set grepprg=grep\ -n\ $*
