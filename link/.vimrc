@@ -41,6 +41,9 @@ set splitright
 
 " Press F4 to toggle highlighting on/off, and show current value.
 nnoremap <F4> :set hlsearch! hlsearch?<CR>
+" toggle word wrap
+nnoremap <F5> :set nowrap! nowrap?<CR>
 
 " self explanatory
 set cursorline
+
