@@ -2,7 +2,6 @@
 export DOTFILES=~/.dotfiles
 
 # Add binaries into the path
-PATH=/bin:$PATH
 PATH=$DOTFILES/bin:$PATH
 export PATH
 
