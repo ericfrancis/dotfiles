@@ -4,6 +4,9 @@
 "   sensible
 "   ctrlp
 "   vim-airline
+"   vim-surround
+"   DidYouMean
+"   gruvbox (color scheme)
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -32,10 +35,7 @@ set grepprg=grep\ -n\ $*
 
 " Line numbers
 set number
-
-" Mouse support
-set mouse=a 
-set ttyfast
+set cursorline
 
 " function toggles
 " toggle highlighting on/off
@@ -43,12 +43,9 @@ nnoremap <F4> :set hlsearch! hlsearch?<CR>
 " toggle word wrap
 nnoremap <F5> :set nowrap! nowrap?<CR>
 
-" self explanatory
-set cursorline
-
 " http://blog.chrisbe.st/articles/coding/two-years-of-vim
 " jk exits insert mode
-inoremap jk <esc>
+inoremap jj <esc>
 " makes vim move down a 'cursor' line for when line is word wrapped
 nnoremap j gj
 nnoremap k gk
@@ -57,11 +54,22 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+" default open tabs to right and down
 set splitright
 set splitbelow
+" change mapping for switching windows
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-" use colon and semicolon to do things
-nnoremap ; :
+
+" indentation with mixed tabs and spaces,
+set shiftwidth=2
+set softtabstop=2
+
+" http://vim.wikia.com/wiki/Quickly_adding_and_deleting_empty_lines
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>

@@ -1,9 +1,11 @@
+# bash options
+set -o vi
+
 # Where the magic happens.
 export DOTFILES=~/.dotfiles
 
 # Add binaries into the path
-PATH=$DOTFILES/bin:$PATH
-export PATH
+export PATH="$PATH:$DOTFILES/bin"
 
 # Source all files in "source"
 function src() {
