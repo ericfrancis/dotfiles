@@ -1,6 +1,8 @@
 # bash options
 set -o vi
 
+source /usr/share/bash-completion/bash_completion
+
 # Where the magic happens.
 export DOTFILES=~/.dotfiles
 
