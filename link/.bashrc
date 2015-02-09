@@ -2,6 +2,8 @@
 set -o vi
 
 source /usr/share/bash-completion/bash_completion
+source ~/bin/*.sh
+export PATH="${HOME}/bin:$PATH"
 
 # Where the magic happens.
 export DOTFILES=~/.dotfiles
@@ -36,3 +38,7 @@ set_mvn_version() {
   [[ $# -ne 1 || -z $1 ]] && echo "missing or invalid arguments" && return 1
   mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$1
 }
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
