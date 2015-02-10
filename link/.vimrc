@@ -7,12 +7,20 @@
 "   vim-surround
 "   DidYouMean
 "   gruvbox (color scheme)
+"   vim-fugitive (git)
+"   nerd Commenter
+"   tagbar
+"   supertab
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" NERDTree settings
-let NERDTreeChDirMode = 2
+" tagbar settings
+nmap <F8> :TagbarToggle<CR>
+
+" vim-airline settings
+let g:airline#extensions#branch#enabled = 1
+
 " find current buffer in tree
 nnoremap <leader>r :NERDTreeFind<cr>
 nnoremap <leader>d :NERDTreeToggle<CR>
@@ -57,11 +65,6 @@ map <Down> <Nop>
 " default open tabs to right and down
 set splitright
 set splitbelow
-" change mapping for switching windows
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " indentation with mixed tabs and spaces,
 set shiftwidth=2

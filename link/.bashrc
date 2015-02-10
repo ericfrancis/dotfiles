@@ -2,7 +2,7 @@
 set -o vi
 
 source /usr/share/bash-completion/bash_completion
-source ~/bin/*.sh
+source ${HOME}/bin/*.sh
 export PATH="${HOME}/bin:$PATH"
 
 # Where the magic happens.
