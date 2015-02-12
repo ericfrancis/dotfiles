@@ -32,18 +32,16 @@ let g:ctrlp_cmd = 'CtrlP'
 " ignore files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
-" set directory where swap files are stored
-set noswapfile
-
-" normal mode remaps
+" view open buffers
 nnoremap <leader>b :ls<cr>:b<space>
 
 " Grep fix
 set grepprg=grep\ -n\ $*
 
-" Line numbers
 set number
 set cursorline
+set noswapfile
+set mouse=a
 
 " function toggles
 " toggle highlighting on/off
@@ -52,7 +50,7 @@ nnoremap <F4> :set hlsearch! hlsearch?<CR>
 nnoremap <F5> :set nowrap! nowrap?<CR>
 
 " http://blog.chrisbe.st/articles/coding/two-years-of-vim
-" jk exits insert mode
+" jj exits insert mode
 inoremap jj <esc>
 " makes vim move down a 'cursor' line for when line is word wrapped
 nnoremap j gj
