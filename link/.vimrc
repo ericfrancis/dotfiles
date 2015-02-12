@@ -6,11 +6,12 @@
 "   vim-airline
 "   vim-surround
 "   DidYouMean
-"   gruvbox (color scheme)
-"   vim-fugitive (git)
 "   nerd Commenter
 "   tagbar
 "   supertab
+" gvim plugins
+"  gruvbox (color scheme)
+
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -32,8 +33,7 @@ let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " set directory where swap files are stored
-set swapfile
-set dir=/tmp
+set noswapfile
 
 " normal mode remaps
 nnoremap <leader>b :ls<cr>:b<space>
@@ -57,18 +57,9 @@ inoremap jj <esc>
 " makes vim move down a 'cursor' line for when line is word wrapped
 nnoremap j gj
 nnoremap k gk
-" Unmapping arrow keys.
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
 " default open tabs to right and down
 set splitright
 set splitbelow
-
-" indentation with mixed tabs and spaces,
-set shiftwidth=2
-set softtabstop=2
 
 " http://vim.wikia.com/wiki/Quickly_adding_and_deleting_empty_lines
 " Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
