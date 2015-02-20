@@ -9,6 +9,7 @@
 "   nerd Commenter
 "   tagbar
 "   supertab
+"   Vim Tmux Navigator
 " gvim plugins
 "  gruvbox (color scheme)
 
@@ -30,7 +31,11 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " ignore files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/* 
+
+set smarttab
+set shiftwidth=2
+set tabstop=2
 
 " view open buffers
 nnoremap <leader>b :ls<cr>:b<space>
