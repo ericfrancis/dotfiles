@@ -64,9 +64,9 @@ nnoremap k gk
 set splitright
 set splitbelow
 
-" http://vim.wikia.com/wiki/Quickly_adding_and_deleting_empty_lines
-" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
-nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+" http://blog.unixphilosopher.com/2015/02/five-weird-vim-tricks.html
+cabbrev ww :w
+nnoremap ; :
+nnoremap : ;
+" Auto-save a file when you leave insert mode
+autocmd InsertLeave * if expand('%') != '' | update | endif
