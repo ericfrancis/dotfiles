@@ -1,17 +1,21 @@
-#!/bin/bash
+#"!/bin/bash
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-ROOT_DIR=$( cd $DIR && cd .. && pwd )
-LINK_DIR=$( cd $ROOT_DIR/link && pwd )
-COPY_DIR=$( cd $ROOT_DIR/copy && pwd )
+ROOT_DIR=$( cd "$DIR" && cd .. && pwd )
+LINK_DIR=$( cd "$ROOT_DIR"/link && pwd )
+COPY_DIR=$( cd "$ROOT_DIR"/copy && pwd )
 
-for file in $( ls $LINK_DIR ); do
-  [ -e ~/.$file ] && rm ~/.$file 
-	echo $LINK_DIR/$file
-	ln -s $LINK_DIR/$file ~/.$file
+
+echo "Linking files in $LINK_DIR"
+for file in "$LINK_DIR"/*; do
+	base=$(basename "$file")
+	rm -f ~/."$base"
+	ln -s "$file" ~/."$base" && echo "linking $base"
 done
 
-for file in $( ls $COPY_DIR ); do
-	[ -e ~/.$file ] && break
-	cp $COPY_DIR/$file ~/.$file
+echo "Copying files in $COPY_DIR"
+for file in "$COPY_DIR"/*; do
+	base=$(basename "$file")
+	[ -e ~/."$base" ] && echo skipping "$base" && break
+	cp "$file" ~/."$base" && echo copying "$base"
 done

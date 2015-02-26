@@ -4,6 +4,6 @@ alias ls='ls -F --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -l'
 
-for file in $( ls ~/dotfiles/source ); do
-	source ~/dotfiles/source/$file
+for file in ~/dotfiles/source/*;  do
+	source $file
 done
