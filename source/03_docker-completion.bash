@@ -169,6 +169,23 @@ __docker_capabilities() {
 	" -- "$cur" ) )
 }
 
+# a selection of the available signals that is most likely of interest in the
+# context of docker containers.
+__docker_signals() {
+	local signals=(
+		SIGCONT
+		SIGHUP
+		SIGINT
+		SIGKILL
+		SIGQUIT
+		SIGSTOP
+		SIGTERM
+		SIGUSR1
+		SIGUSR2
+	)
+	COMPREPLY=( $( compgen -W "${signals[*]} ${signals[*]#SIG}" -- "$( echo $cur | tr '[:lower:]' '[:upper:]')" ) )
+}
+
 _docker_docker() {
 	local boolean_options="
 		--api-enable-cors
@@ -417,7 +434,21 @@ _docker_inspect() {
 }
 
 _docker_kill() {
-	__docker_containers_running
+	case "$prev" in
+		--signal|-s)
+			__docker_signals
+			return
+			;;
+	esac
+
+	case "$cur" in
+		-*)
+			COMPREPLY=( $( compgen -W "--signal -s" -- "$cur" ) )
+			;;
+		*)
+			__docker_containers_running
+			;;
+	esac
 }
 
 _docker_load() {
@@ -518,6 +549,13 @@ _docker_push() {
 	local counter=$(__docker_pos_first_nonflag)
 	if [ $cword -eq $counter ]; then
 		__docker_image_repos_and_tags
+	fi
+}
+
+_docker_rename() {
+	local counter=$(__docker_pos_first_nonflag)
+	if [ $cword -eq $counter ]; then
+		__docker_containers_all
 	fi
 }
 
@@ -632,7 +670,7 @@ _docker_run() {
 			_filedir
 			return
 			;;
-		--device|-d|--volume)
+		--device|--volume|-v)
 			case "$cur" in
 				*:*)
 					# TODO somehow do _filedir for stuff inside the image, if it's already specified (which is also somewhat difficult to determine)
@@ -883,6 +921,7 @@ _docker() {
 		ps
 		pull
 		push
+		rename
 		restart
 		rm
 		rmi
