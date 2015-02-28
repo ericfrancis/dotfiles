@@ -5,5 +5,5 @@
 export JAVA_HOME=/opt/java
 export M2_HOME=/opt/maven
 export RELATIVE_NODE_MODULES=node_modules/.bin
-export NODEJS=/opt/nodejs
+export NODEJS="/home/eric/dev-tools/nodejs"
 export PATH="$PATH:$M2_HOME/bin:$JAVA_HOME/bin:$RELATIVE_NODE_MODULES:$NODEJS"
