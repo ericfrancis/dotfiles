@@ -1,3 +1,10 @@
+BoldAsFont=no
+Transparency=high
+OpaqueWhenFocused=yes
+FontHeight=10
+Columns=150
+Rows=50
+
 Black=             7,  54,  66
 BoldBlack=         0,  43,  54
 Red=             220,  50,  47
