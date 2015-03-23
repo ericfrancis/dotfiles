@@ -2,9 +2,9 @@
 
 alias ls='ls -F --color=auto'
 alias grep='grep --color=auto'
-alias ll='ls -l'
+alias ll='ls -la'
 
-for file in ~/dotfiles/source/*; do
+for file in ~/dotfiles/source/bash/*; do
 	source "$file"
 done
 
