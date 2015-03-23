@@ -1,27 +1,18 @@
 " pathogen
 "  plugins: 
-"   nerdtree
 "   sensible
+"   Vim Tmux Navigator
+"   nerdtree
+"
 "   ctrlp
-"   vim-airline
 "   vim-surround
 "   DidYouMean
 "   nerd Commenter
-"   tagbar
-"   supertab
-"   Vim Tmux Navigator
-" gvim plugins
-"  gruvbox (color scheme)
 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
-" tagbar settings
-nmap <F8> :TagbarToggle<CR>
-
-" vim-airline settings
-let g:airline#extensions#branch#enabled = 1
 
 " find current buffer in tree
 nnoremap <leader>r :NERDTreeFind<cr>
@@ -54,7 +45,6 @@ nnoremap <F4> :set hlsearch! hlsearch?<CR>
 " toggle word wrap
 nnoremap <F5> :set nowrap! nowrap?<CR>
 
-" http://blog.chrisbe.st/articles/coding/two-years-of-vim
 " jj exits insert mode
 inoremap jj <esc>
 " makes vim move down a 'cursor' line for when line is word wrapped
@@ -64,7 +54,6 @@ nnoremap k gk
 set splitright
 set splitbelow
 
-" http://blog.unixphilosopher.com/2015/02/five-weird-vim-tricks.html
 cabbrev ww :w
 nnoremap ; :
 nnoremap : ;

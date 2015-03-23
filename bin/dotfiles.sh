@@ -6,12 +6,11 @@ LINK_DIR=$( cd "$ROOT_DIR"/link && pwd )
 COPY_DIR=$( cd "$ROOT_DIR"/copy && pwd )
 SOURCE_DIR=$( cd "$ROOT_DIR"/source && pwd )
 
-
 echo "Linking files in $LINK_DIR"
 for file in "$LINK_DIR"/*; do
 	base=$(basename "$file")
-	rm -f ~/."$base"
-	ln -s "$file" ~/."$base" && echo "linking $base"
+	rm -rf ~/."$base"
+	ln -sv "$file" ~/."$base" 
 done
 
 echo "Copying files in $COPY_DIR"

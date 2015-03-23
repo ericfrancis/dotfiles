@@ -1,0 +1,15 @@
+[submodule "link/vim/bundle/vim-sensible"]
+	path = link/vim/bundle/vim-sensible
+	url = git://github.com/tpope/vim-sensible.git
+[submodule "link/vim/bundle/nerdtree"]
+	path = link/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "link/tmux/plugins/tpm"]
+	path = link/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "link/tmux/plugins/tmux-sensible"]
+	path = link/tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+[submodule "link/vim/bundle/vim-pathogen"]
+	path = link/vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
