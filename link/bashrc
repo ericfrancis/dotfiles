@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+shopt -s cdspell
+
 PATH="$HOME"/bin:"$PATH"
 
 alias ls='ls -F --color=auto'
