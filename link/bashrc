@@ -1,10 +1,10 @@
-# bash options
+#!/usr/bin/env bash
 
 alias ls='ls -F --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -la'
 
-for file in ~/dotfiles/source/bash/*; do
+for file in ~/dotfiles/source/*; do
 	source "$file"
 done
 

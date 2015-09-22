@@ -1,9 +1,11 @@
+#!/usr/bin/env sh
+
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
 
-export JAVA_HOME=/opt/java
-export M2_HOME=/opt/maven
-export RELATIVE_NODE_MODULES=node_modules/.bin
-export NODEJS="/home/eric/dev-tools/nodejs"
-export PATH="$PATH:$M2_HOME/bin:$JAVA_HOME/bin:$RELATIVE_NODE_MODULES:$NODEJS"
+# export JAVA_HOME=/opt/java
+# export M2_HOME=/opt/maven
+# export RELATIVE_NODE_MODULES=node_modules/.bin
+# export NODEJS="/home/eric/dev-tools/nodejs"
+# export PATH="$PATH:$M2_HOME/bin:$JAVA_HOME/bin:$RELATIVE_NODE_MODULES:$NODEJS"
