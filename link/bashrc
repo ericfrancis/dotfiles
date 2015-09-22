@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+PATH="$HOME"/bin:"$PATH"
+
 alias ls='ls -F --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -la'

@@ -13,10 +13,11 @@ for file in "$LINK_DIR"/*; do
 	ln -sv "$file" ~/."$base" 
 done
 
-echo "Copying files in $COPY_DIR"
-for file in "$COPY_DIR"/*; do
-	base=$(basename "$file")
-	[ -e ~/."$base" ] && echo skipping "$base" && break
-	cp "$file" ~/."$base" && echo copying "$base"
-done
+# echo "Copying files in $COPY_DIR"
+# for file in "$COPY_DIR"/*; do
+#	base=$(basename "$file")
+#	[ -e ~/."$base" ] && echo skipping "$base" && break
+#	cp "$file" ~/."$base" && echo copying "$base"
+#done
 
+[ -e "$HOME"/bin ] || mkdir "$HOME"/bin
