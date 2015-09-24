@@ -3,7 +3,7 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 ROOT_DIR=$( cd "$DIR" && cd .. && pwd )
 LINK_DIR=$( cd "$ROOT_DIR"/link && pwd )
-COPY_DIR=$( cd "$ROOT_DIR"/copy && pwd )
+# COPY_DIR=$( cd "$ROOT_DIR"/copy && pwd )
 SOURCE_DIR=$( cd "$ROOT_DIR"/source && pwd )
 
 echo "Linking files in $LINK_DIR"
