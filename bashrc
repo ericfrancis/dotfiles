@@ -1,47 +1,31 @@
-# bash options
+#!/bin/bash
 
-alias ls='ls -F --color=auto'
-alias grep='grep --color=auto'
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+if command -v tmux >/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
+# Any completions you add in ~/.bash_completion are sourced last.
+[[ -f /etc/bash_completion ]] && . /etc/bash_completion
+
+# Interactive operation...
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Default to human readable figures
+alias df='df -h'
+alias du='du -h'
+
+alias less='less -r'                          # raw control characters
+alias grep='grep --color'                     # show differences in colour
+alias egrep='egrep --color=auto'              # show differences in colour
+alias fgrep='fgrep --color=auto'              # show differences in colour
+
+# shortcuts for different directory listings
+alias ls='ls -hF --color=tty'
 alias ll='ls -la'
-
-for file in ~/dotfiles/source/bash/*; do
-	source "$file"
-done
-
-# https://wiki.archlinux.org/index.php/Color_Bash_Prompt
-set_prompt () {
-		# These override what is in bash-colors
-    Last_Command=$? # Must come first!
-    Blue='\[\e[01;34m\]'
-    White='\[\e[01;37m\]'
-    Red='\[\e[01;31m\]'
-		Green='\[\e[01;32m\]'  
-    Reset='\[\e[00m\]'
-    FancyX='\342\234\227'
-    Checkmark='\342\234\223'
-
-    # Add a bright white exit status for the last command
-		PS1=""
-    # If it was successful, print a green check mark. Otherwise, print
-    # a red X.
-    if [[ $Last_Command == 0 ]]; then
-        PS1+="$Green$Checkmark "
-    else
-				PS1="$White\$? "
-        PS1+="$Red$FancyX "
-    fi
-    # If root, just print the host in red. Otherwise, print the current user
-    # and host in green.
-    if [[ $EUID == 0 ]]; then
-				PS1+="${Red}root "
-    else
-				PS1+="$Green\u "
-    fi
-    # Print the working directory and prompt marker in blue, and reset
-    # the text color to the default.
-		PS1+="$Blue[ \w ]"
-		
-		PS1+="$White\$(__git_ps1) $Blue\$ $Reset"
-}
-PROMPT_COMMAND='set_prompt'
-
+alias la='ls -A'
+alias l='ls -CF'
