@@ -9,4 +9,5 @@
 	helper = cache --timeout=3600
 [core]
 	excludesfile = ~/.gitignore_global
-	autocrlf = input
+	autocrlf = false
+  eol = lf
